@@ -12,7 +12,7 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://shiny.umbc.edu/Projects/SCND)
+[Interactive Map of Adults with Some College, No Degree](http://shiny.umbc.edu/Projects/SCND)
 <img src="images/SCND.png?raw=true"/>
 
 ---

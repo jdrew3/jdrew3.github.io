@@ -6,4 +6,4 @@
 
 [Full Poster](../pdfs/Drew_Poster.pdf)  
 
-[Full Paper](../pdfs/Drew_Project Report.pdf)
+[Full Paper](../pdfs/Drew_ProjectReport.pdf)

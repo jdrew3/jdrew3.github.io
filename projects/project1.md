@@ -4,5 +4,6 @@
 
 <img src="../images/Poster_Sshot.JPG?raw=true"/>
 
-[Full Poster](../pdfs/Drew_Poster.pdf)
+[Full Poster](../pdfs/Drew_Poster.pdf)  
+
 [Full Paper](../pdfs/Drew_Project Report.pdf)

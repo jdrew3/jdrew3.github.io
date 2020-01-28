@@ -2,7 +2,7 @@
 
 ---
 
-### Category Name 1 
+### Featured Projects
 
 [An "Emerald Necklace" for the UMBC Campus](/projects/project1)
 <img src="images/Green_Final.PNG?raw=true"/>
@@ -17,7 +17,7 @@
 
 ---
 
-### Category Name 2
+### Other Projects
 
 - [Project 1 Title](http://example.com/)
 - [Project 2 Title](http://example.com/)

@@ -4,8 +4,8 @@
 
 ### Category Name 1 
 
-[Project 1 Title](/projects/project1)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[An "Emerald Necklace" for the UMBC Campus](/projects/project1)
+<img src="images/Green_Final.PNG?raw=true"/>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)

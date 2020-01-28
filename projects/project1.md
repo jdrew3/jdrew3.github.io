@@ -1,5 +1,8 @@
-## Project 1: Rad Stuff
+## An "Emerald Necklace" for the UMBC Campus
 
-**Project description:** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Project description:** For my GES 405 Final Project, I assessed the connectivity of green spaces of the UMBC Campus. This involved field assessment of each site, digitization of site perimeters from remote imagery, and network analysis.
 
-<img src="../images/dummy_thumbnail.jpg?raw=true"/>
+<img src="../images/Poster_Sshot.jpg?raw=true"/>
+
+[Full Poster](../pdfs/Drew_Poster.pdf)
+[Full Paper](../pdfs/Drew_Project Report.pdf)

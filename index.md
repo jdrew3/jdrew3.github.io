@@ -8,11 +8,11 @@
 <img src="images/Green_Final.PNG?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Income Disparity in Baltimore](/projects/project2)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Interactive Map of Adults with Some College, No Degree](http://shiny.umbc.edu/Projects/SCND)
+[Interactive Map of Adults with Some College, No Degree](/projects/project3)
 <img src="images/SCND.png?raw=true"/>
 
 ---

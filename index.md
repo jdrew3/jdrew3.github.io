@@ -8,8 +8,8 @@
 <img src="images/Green_Final.PNG?raw=true"/>
 
 ---
-[Income Disparity in Baltimore](/projects/project2)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Income Disparity in Baltimore](/projects/project2)  
+<img src="images/lab4_383_sshot.JPG?raw=true"/>
 
 ---
 [Interactive Map of Adults with Some College, No Degree](/projects/project3)

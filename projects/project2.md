@@ -4,4 +4,4 @@
 
 <img src="../images/lab4_383_sshot.JPG?raw=true"/>
 
-[Full Infographic](../pdfs/drew_lab4_graphic.pdf) 
+[Full Infographic](../pdf/drew_lab4_graphic.pdf) 

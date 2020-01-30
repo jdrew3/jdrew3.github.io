@@ -17,13 +17,11 @@
 
 ---
 
-### Other Projects
+### Recreations of Learn QGIS Figures
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [Learn QGIS Chapter 2](/projects/learnqgis_ch2)
+- [Learn QGIS Chapter 3](/projects/learnqgis_ch3)
+- [Learn QGIS Chapter 4](/projects/learnqgis_ch4)
 
 ---
 

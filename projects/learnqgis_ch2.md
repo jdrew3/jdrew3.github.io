@@ -4,4 +4,4 @@
 
 <img src="../images/ch2_thum.JPG?raw=true"/>
 
---- [Link to Full Map](http://shiny.umbc.edu/Projects/SCND)
+

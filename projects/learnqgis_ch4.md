@@ -1,6 +1,6 @@
-## Learn QGIS Ch 3 Maps
+## Learn QGIS Ch 4 Maps
 
-**Visualizing Data** 
+**Creating Great Maps**  
 
 <img src="../images/ch4_thum1.JPG?raw=true"/>  
 

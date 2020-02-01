@@ -24,7 +24,10 @@
 
 <img src="../images/ch4_web1.JPG?raw=true"/>  
 
+[Full Image](../images/ch4_web1.JPG)
+
 ### 3D Web Map (Screenshot Only)    
 
 <img src="../images/3dmap.png?raw=true"/>  
 
+[Full Image](../images/3dmap.png)

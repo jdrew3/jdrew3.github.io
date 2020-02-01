@@ -5,7 +5,7 @@
 ### Featured Projects
 
 [An "Emerald Necklace" for the UMBC Campus](/projects/project1)  
-<img src="images/Green_Final.PNG?raw=true">
+<img src="images/ges405_thumb.PNG?raw=true">
 
 ---
 [Income Disparity in Baltimore](/projects/project2)  

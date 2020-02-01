@@ -13,7 +13,7 @@
 
 ---
 [Interactive Map of Adults with Some College, No Degree](/projects/project3)  
-<img src="images/SCND.png?raw=true"/>
+<img src="images/SCND.PNG?raw=true"/>
 
 ---
 

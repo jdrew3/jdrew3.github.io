@@ -2,4 +2,5 @@
 
 <img src="../images/ch2_thum.JPG?raw=true"/>
 
+[Full Image](../images/ch2_thum.JPG)
 

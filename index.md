@@ -4,24 +4,24 @@
 
 ### Featured Projects
 
-[An "Emerald Necklace" for the UMBC Campus](/projects/project1)
-<img src="images/Green_Final.PNG?raw=true"/>
+[An "Emerald Necklace" for the UMBC Campus](/projects/project1)  
+<img src="images/Green_Final.PNG?raw=true" width=350 height = 411.5/>
 
 ---
 [Income Disparity in Baltimore](/projects/project2)  
 <img src="images/lab4_383_sshot.JPG?raw=true"/>
 
 ---
-[Interactive Map of Adults with Some College, No Degree](/projects/project3)
+[Interactive Map of Adults with Some College, No Degree](/projects/project3)  
 <img src="images/SCND.png?raw=true"/>
 
 ---
 
 ### Recreations of Learn QGIS Figures
 
-- [Learn QGIS Chapter 2](/projects/learnqgis_ch2)
-- [Learn QGIS Chapter 3](/projects/learnqgis_ch3)
-- [Learn QGIS Chapter 4](/projects/learnqgis_ch4)
+- [Learn QGIS Chapter 2](/projects/learnqgis_ch2)  
+- [Learn QGIS Chapter 3](/projects/learnqgis_ch3)  
+- [Learn QGIS Chapter 4](/projects/learnqgis_ch4)  
 
 ---
 

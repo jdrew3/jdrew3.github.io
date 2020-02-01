@@ -17,7 +17,7 @@
 
 ---
 
-### Recreations of Learn QGIS Figures
+### Recreations of [Learn QGIS](https://www.packtpub.com/application-development/learn-qgis-fourth-edition) Figures
 
 - [Learn QGIS Chapter 2](/projects/learnqgis_ch2)  
 - [Learn QGIS Chapter 3](/projects/learnqgis_ch3)  

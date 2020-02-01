@@ -1,7 +1,7 @@
 ## Interactive Map of Adults with Some College, No Degree in Maryland
 
-**Project description:** To assess the distribution of this demographic and make it easy to present, I made this interactive map.
+**Project description:** I wanted to assess the distribution of 25-and-over adults in Maryland with Some College but No Degree. I used a bivariate chloropleth so that the total 25+ population can be directly compared to the percentage of those who have some college and no degree.
 
 <img src="../images/SCND.png?raw=true"/>
 
-[Link to Full Map](http://shiny.umbc.edu/Projects/SCND)
+[Link to Full Map](https://jdrew3.shinyapps.io/scnd/)

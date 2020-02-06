@@ -1,15 +1,10 @@
-## Developer Portfolio Landing Page Template
+## Portfolio for Justin Drew
 
-Use this template if you need a quick developer / data science portfolio! Based on a Minimal Jekyll theme for GitHub Pages.
-
-<img src="images/demo.gif?raw=true"/>
-
-See full step by step tutorial [on Medium](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd).
-___
+View the full site at [jdrew3.github.io](jdrew3.github.io)
 
 You can use the editor on GitHub to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This setup is based on instructions by [Ivanna Kacewica](https://blog.usejournal.com/@evanca) on how to [Set Up Your Portfolio Website in Less Than 10 Minutes with Github Pages](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd). 
 
 ### Markdown
 

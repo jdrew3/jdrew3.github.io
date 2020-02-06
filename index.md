@@ -9,11 +9,11 @@
 
 ---
 [Income Disparity in Baltimore](/projects/project2)  
-<img src="images/lab4_383_sshot.JPG?raw=true"/>
+<img src="images/lab4_thum.png?raw=true"/>
 
 ---
 [Interactive Map of Adults with Some College, No Degree](/projects/project3)  
-<img src="images/SCND.PNG?raw=true"/>
+<img src="images/SCND_thum.png?raw=true"/>
 
 ---
 <!--

@@ -16,7 +16,7 @@
 <img src="images/SCND.PNG?raw=true"/>
 
 ---
-
+<!--
 ### Recreations of [Learn QGIS](https://www.packtpub.com/application-development/learn-qgis-fourth-edition) Figures
 
 - [Learn QGIS Chapter 2](/projects/learnqgis_ch2)  
@@ -24,7 +24,7 @@
 - [Learn QGIS Chapter 4](/projects/learnqgis_ch4)  
 
 ---
-
+-->
 
 
 

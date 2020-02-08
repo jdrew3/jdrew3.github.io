@@ -11,7 +11,8 @@ Connecting the green spaces on the UMBC Campus
 ---
 [Income Disparity in Baltimore](/projects/project2)  
 Comparing racial makeup of census tracts to median income   
-[<img src="images/lab4_thum2.png?raw=true"/>](/projects/project2)
+<img src="images/lab4_thum2.png?raw=true"/>   
+<!--[<img src="images/lab4_thum2.png?raw=true"/>](/projects/project2)-->
 
 ---
 [Interactive Map of Adults with Some College, No Degree](/projects/project3)  

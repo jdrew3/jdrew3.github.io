@@ -5,14 +5,17 @@
 ### Featured Projects
 
 [An "Emerald Necklace" for the UMBC Campus](/projects/project1)  
+Connecting the green spaces on the UMBC Campus   
 [<img src="images/ges405_thumb.PNG?raw=true">](/projects/project1)  
 
 ---
 [Income Disparity in Baltimore](/projects/project2)  
-[<img src="images/lab4_thum.png?raw=true"/>](/projects/project2)
+Comparing racial makeup of census tracts to median income   
+[<img src="images/lab4_thum2.png?raw=true"/>](/projects/project2)
 
 ---
 [Interactive Map of Adults with Some College, No Degree](/projects/project3)  
+Displaying the distribution of this population within Maryland    
 [<img src="images/SCND_thum.png?raw=true"/>](/projects/project3)
 
 <!--

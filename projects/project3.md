@@ -4,7 +4,9 @@
 
 **Tools Used:** R (Shiny, Leaflet)
 
-**Main Takeaways:** The interactive legend allows the user to display only subsets of this population in Maryland based on the total people with some college and no degree within a census tract and how much of that census tract's total population is in that demographic.    
+**Main Takeaways:** The interactive legend allows the user to display only subsets of this population in Maryland based on the total people with some college and no degree within a census tract and how much of that census tract's total adult population is in that demographic.    
+
+Data from the American Community Survey.  
 
 <img src="../images/SCND.PNG?raw=true"/>
 

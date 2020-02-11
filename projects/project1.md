@@ -4,7 +4,7 @@
   
 **Tools Used:** ArcGIS, Powerpoint  
   
-**Main Takeaways:** Corridors between greenways have been shown to improve the quality of green spaces in terms of both environmental health and outdoor recreation. To bring these benefits to UMBC, an optimal green space network would need to be constructed via implemented new trails and renewing maintenance of existing ones.   
+**Main Takeaways:** Corridors between greenways have been shown to improve the quality of green spaces in terms of both environmental health and outdoor recreation. To bring these benefits to UMBC, an optimal green space network would need to be constructed via implementing new trails and renewing maintenance of existing ones.   
 
 See link to paper below for full citations.  
 

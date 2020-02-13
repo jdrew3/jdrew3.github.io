@@ -4,11 +4,16 @@
 
 ### Featured Projects
 
+[Web Map 1](/projects/project_web1)  
+Interactive map displaying ...
+[<img src="images/webmap1_thum.jpg?raw=true">](/projects/project_web1)  
+
+---   
 [An "Emerald Necklace" for the UMBC Campus](/projects/project1)  
 Connecting the green spaces on the UMBC Campus   
 [<img src="images/ges405_thumb.PNG?raw=true">](/projects/project1)  
 
----
+---  
 [Income Disparity in Baltimore](/projects/project2)  
 Comparing racial makeup of census tracts to median income   
 <img src="images/lab4_thum2.png?raw=true"/>   

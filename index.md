@@ -4,7 +4,7 @@
 
 ### Featured Projects
 
-[Under the Poverty Line and Near a Grocery Store](/projects/project_web1)  
+[Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  
 Interactive map displaying percentage of Baltimore households under the poverty line within half-mile service area of a grocery store by neighborhood
 [<img src="images/webmap1_thum.jpg?raw=true">](/projects/project_web1)  
 

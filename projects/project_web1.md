@@ -8,6 +8,6 @@
 
 Data Source: Baltimore Neighborhood Indicator Alliance
 
-<img src="../images/webmap_lab_thum.jpg?raw=true"/>
+[<img src="../images/webmap_lab_thum.jpg?raw=true"/>](../pages/webmap_labeled/index.html#12/39.3023/-76.6276)   
 
 [Full Map](../pages/webmap_labeled/index.html#12/39.3023/-76.6276)  

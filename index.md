@@ -6,7 +6,7 @@
 
 [Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  
 Displaying percentage of Baltimore households in poverty and within a grocery store's service area 
-[<img src="images/webmap1_thum.jpg?raw=true">](/projects/project_web1)  
+[<img src="images/webmap_lab_thum.jpg?raw=true">](/projects/project_web1)  
 
 ---   
 [An "Emerald Necklace" for the UMBC Campus](/projects/project1)  

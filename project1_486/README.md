@@ -14,4 +14,4 @@ Assessing spatial autocorrelation of the amount of insured vs uninsured people.
 
 ## Outputs  
 - Spatial autocorrelation maps  
-- Map of values
+- Web map of values for each year (2000, 2005, 2010, 2015)

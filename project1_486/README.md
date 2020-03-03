@@ -4,7 +4,7 @@
 Health Insurance Coverage in Maryland
 
 ## Data  
-Tabular census data is available from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) until its taken offline at the end of March, and then the new [Census Data Explorer](data.census.gov) thereafter. State census tract shapefiles are also available at [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml), as well as through [other](https://cran.r-project.org/web/packages/tidycensus/tidycensus.pdf) [sources](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html).    
+Tabular census data is available from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) until its taken offline at the end of March, and then the new [Census Data Explorer](https://data.census.gov) thereafter. State census tract shapefiles are also available at [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml), as well as through [other](https://cran.r-project.org/web/packages/tidycensus/tidycensus.pdf) [sources](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html).    
 
 ## Transformations/Subsets  
 No subsetting should be necessary.    

@@ -1,17 +1,17 @@
 # Project 1  
 
 ## Topic  
-Health Insurance Coverage in the USA
+Health Insurance Coverage in Maryland
 
 ## Data  
 Census data from [American FactFinder](https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) until its taken offline at the end of March, and then the new [Census Data Explorer](data.census.gov) thereafter. Shapefiles will be at the census tract level.    
 
 ## Transformations/Subsets  
-I want to make a map at the country level mapping coverage and type of coverage (uninsured, private insurance, public insurance). The census data I've found is formatted such that it would be easy to subset it by state or coverage type as needed, but for now, the only planned subset is to map only the continental United States.    
+No subsetting should be necessary.    
 
 ## Analysis  
-I will make two maps regarding Health Insurance coverage for 2010 and 2015: a map of the population broken down by the above types and a maps of spatial autocorrelation using Getis-Ord G index to distinguish autocorrelated areas of high coverage from autocorrelated areas of low coverage.    
+I will make two maps regarding Health Insurance coverage for 2010 and 2015: a map of the insured vs uninsured population and a map of spatial autocorrelation thereof using the Getis-Ord G statistic to distinguish clusters of high coverage from clusters of low coverage.    
 
 ## Outputs  
 - Web map of values for each year. Ideally, this will take the form of one map where the user can change the year being displayed via a menu or series of buttons.   
-- The Getis-Ord maps would ideally also be part of the previous web map to enable the user to quickly switch between the values and the spatial autocorrelation for a given year.   
+- Web map of the result of the Getis-Ord analysis. Ideally, this will also be part of the previous web map to enable the user to quickly switch between the data values and the cluster map for a given year.   

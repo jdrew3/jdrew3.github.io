@@ -10,7 +10,9 @@ Tabular census data is available from [American FactFinder](https://factfinder.c
 No subsetting should be necessary.    
 
 ## Analysis  
-I will make two maps regarding Health Insurance coverage for 2010 and 2015: a map of the insured vs uninsured population and a map of spatial autocorrelation thereof using the Getis-Ord G statistic to distinguish clusters of high coverage from clusters of low coverage.    
+I will make two maps regarding Health Insurance coverage for 2010 and 2015: a map of the insured vs uninsured population and a map of spatial autocorrelation thereof using the Getis-Ord G statistic to distinguish clusters of high coverage from clusters of low coverage.
+
+Add Median Household Income as variable of interest.   
 
 ## Outputs  
 - Web map of values for each year. Ideally, this will take the form of one map where the user can change the year being displayed via a menu or series of buttons.   

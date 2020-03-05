@@ -1,6 +1,6 @@
 ## Portfolio for Justin Drew
 
-View the full site at [jdrew3.github.io](jdrew3.github.io)
+View the full site at [jdrew3.github.io](https://jdrew3.github.io)
 
 This setup is based on instructions by [Ivanna Kacewica](https://blog.usejournal.com/@evanca) on how to [Set Up Your Portfolio Website in Less Than 10 Minutes with Github Pages](https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd). 
 

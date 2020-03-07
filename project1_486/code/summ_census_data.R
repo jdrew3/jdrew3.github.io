@@ -19,7 +19,7 @@ summ <- tibble(GEOID = names(insured),
                insured = insured, uninsured = uninsured)
 summ <- mutate(summ, total = insured + uninsured)
 
-write_csv(summ,"insurance_2012.csv")
+write_csv(summ,"summary_data/insurance_2012.csv")
 
 ins <- read_csv("clean_tables/health_insurance_by_sex_by_age_2017.csv")
 
@@ -36,4 +36,4 @@ summ <- tibble(GEOID = names(insured),
                insured = insured, uninsured = uninsured)
 summ <- mutate(summ, total = insured + uninsured)
 
-write_csv(summ,"insurance_2017.csv")
+write_csv(summ,"summary_data/insurance_2017.csv")

@@ -2,7 +2,14 @@
 
 ---
 
-### Featured Projects
+### Technical Projects  
+
+[Applying Contextual Polarity to Tweet Classification](/projects/project_tech1)  
+Feature engineering and sentiment analysis of tweets
+
+--- 
+
+### GIS Projects
 
 [Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  
 Displaying percentage of Baltimore households in poverty and within a grocery store's service area 
@@ -24,16 +31,7 @@ Comparing racial makeup of census tracts to median income
 Displaying the distribution of this population within Maryland    
 [<img src="images/SCND_thum.png?raw=true"/>](/projects/project3)
 
-<!--
 ---
-### Recreations of [Learn QGIS](https://www.packtpub.com/application-development/learn-qgis-fourth-edition) Figures
-
-- [Learn QGIS Chapter 2](/projects/learnqgis_ch2)  
-- [Learn QGIS Chapter 3](/projects/learnqgis_ch3)  
-- [Learn QGIS Chapter 4](/projects/learnqgis_ch4)  
-
----
--->
 
 
 

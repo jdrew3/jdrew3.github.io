@@ -1,6 +1,6 @@
 ## Applying Contextual Polarity to Tweet Classification
 
-**Project description:** My group's semester project for CMSC 473, Natural Language Processing, involved adapting a two-step sentiment classifications of phrases in a text to tweet sentiment classification. Starting from a labeled tweet dataset downloaded from [Data For Everyone](https://www.figure-eight.com/data-for-everyone/), pre-processing and feature engineering was done in R and the model training and evaluation was performed in Python.  
+**Project description:** My group's semester project for CMSC 473, Natural Language Processing, involved adapting a process for two-step sentiment classification of phrases in a text to twitter sentiment analysis. Starting from a labeled tweet dataset downloaded from [Data For Everyone](https://www.figure-eight.com/data-for-everyone/), pre-processing and feature engineering was done in R ,and the model training and evaluation was performed in Python.  
   
 **Tools Used:** R (tidyverse), Python (sklearn,numpy,scipy)  
   

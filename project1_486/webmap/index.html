@@ -347,7 +347,7 @@
 		var disp_layers = {
 				  "Percent Insured (2012)": layer_ins12_disp_1,
 				  "Percent Insured (2017)": layer_ins17_disp_2,
-				  "Percent Change": layer_chg_disp_3
+				  "Change": layer_chg_disp_3
 				};
 				L.control.layers(disp_layers).addTo(map);
 				
@@ -360,27 +360,7 @@
                       '#F7FBFF';
 }
 
-/*
-var legend = L.control({position: 'bottomright'});
 
-legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [30, 50, 70, 85, 95, 100],
-        labels = [];
-
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length - 1; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + '% &ndash; ' + grades[i + 1] + '%<br>');
-    }
-
-    return div;
-};
-
-legend.addTo(map);
-*/
 var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {

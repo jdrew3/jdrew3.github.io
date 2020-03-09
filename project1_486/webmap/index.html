@@ -15,6 +15,17 @@
             padding: 0;
             margin: 0;
         }
+		.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
         </style>
         <title></title>
     </head>
@@ -30,15 +41,14 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/NoData_1.js"></script>
-        <script src="data/ins12_disp_2.js"></script>
-        <script src="data/ins17_disp_3.js"></script>
-        <script src="data/chg_disp_4.js"></script>
-        <script src="data/cty_border_5.js"></script>
+        <script src="data/ins12_disp_1.js"></script>
+        <script src="data/ins17_disp_2.js"></script>
+        <script src="data/chg_disp_3.js"></script>
+        <script src="data/Lines_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[36.955427864996636,-79.719941860197],[40.42243074415959,-74.39660960620417]]);
+        }).fitBounds([[37.38328314807374,-80.07520298624007],[40.829947308161216,-73.55460564277068]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var bounds_group = new L.featureGroup([]);
@@ -54,41 +64,7 @@
         });
         layer_EsriDarkGray_0;
         map.addLayer(layer_EsriDarkGray_0);
-				/*
-        function pop_NoData_1(feature, layer) {
-        }
-
-        function style_NoData_1_0() {
-            return {
-                pane: 'pane_NoData_1',
-                opacity: 1,
-                color: 'rgba(247,247,247,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(150,150,150,1.0)',
-                interactive: false,
-            }
-        }
-        map.createPane('pane_NoData_1');
-        map.getPane('pane_NoData_1').style.zIndex = 401;
-        map.getPane('pane_NoData_1').style['mix-blend-mode'] = 'normal';
-        var layer_NoData_1 = new L.geoJson(json_NoData_1, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_NoData_1',
-            layerName: 'layer_NoData_1',
-            pane: 'pane_NoData_1',
-            onEachFeature: pop_NoData_1,
-            style: style_NoData_1_0,
-        });
-        bounds_group.addLayer(layer_NoData_1);
-        map.addLayer(layer_NoData_1);
-				*/
-        function pop_ins12_disp_2(feature, layer) {
+        function pop_ins12_disp_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>GEO_ID</strong><br />' + (feature.properties['GEO_ID'] !== null ? Autolinker.link(feature.properties['GEO_ID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
@@ -96,14 +72,17 @@
                     <tr>\
                         <td colspan="2"><strong>Percent Insured (2012)</strong><br />' + (feature.properties['PCT_INS12'] !== null ? Autolinker.link(feature.properties['PCT_INS12'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MHHI (2012)</strong><br />' + (feature.properties['M12_DISP'] !== null ? Autolinker.link(feature.properties['M12_DISP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_ins12_disp_2_0(feature) {
+        function style_ins12_disp_1_0(feature) {
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins12'] >= 0.300000 && feature.properties['q2wHide_insured_2012_2017_pct_ins12'] <= 0.500000 ) {
                 return {
-                pane: 'pane_ins12_disp_2',
+                pane: 'pane_ins12_disp_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -113,7 +92,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins12'] >= 0.500000 && feature.properties['q2wHide_insured_2012_2017_pct_ins12'] <= 0.700000 ) {
                 return {
-                pane: 'pane_ins12_disp_2',
+                pane: 'pane_ins12_disp_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -123,7 +102,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins12'] >= 0.700000 && feature.properties['q2wHide_insured_2012_2017_pct_ins12'] <= 0.850000 ) {
                 return {
-                pane: 'pane_ins12_disp_2',
+                pane: 'pane_ins12_disp_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -133,7 +112,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins12'] >= 0.850000 && feature.properties['q2wHide_insured_2012_2017_pct_ins12'] <= 0.950000 ) {
                 return {
-                pane: 'pane_ins12_disp_2',
+                pane: 'pane_ins12_disp_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -143,7 +122,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins12'] >= 0.950000 && feature.properties['q2wHide_insured_2012_2017_pct_ins12'] <= 1.000000 ) {
                 return {
-                pane: 'pane_ins12_disp_2',
+                pane: 'pane_ins12_disp_1',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -152,21 +131,21 @@
             }
             }
         }
-        map.createPane('pane_ins12_disp_2');
-        map.getPane('pane_ins12_disp_2').style.zIndex = 402;
-        map.getPane('pane_ins12_disp_2').style['mix-blend-mode'] = 'normal';
-        var layer_ins12_disp_2 = new L.geoJson(json_ins12_disp_2, {
+        map.createPane('pane_ins12_disp_1');
+        map.getPane('pane_ins12_disp_1').style.zIndex = 401;
+        map.getPane('pane_ins12_disp_1').style['mix-blend-mode'] = 'normal';
+        var layer_ins12_disp_1 = new L.geoJson(json_ins12_disp_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ins12_disp_2',
-            layerName: 'layer_ins12_disp_2',
-            pane: 'pane_ins12_disp_2',
-            onEachFeature: pop_ins12_disp_2,
-            style: style_ins12_disp_2_0,
+            dataVar: 'json_ins12_disp_1',
+            layerName: 'layer_ins12_disp_1',
+            pane: 'pane_ins12_disp_1',
+            onEachFeature: pop_ins12_disp_1,
+            style: style_ins12_disp_1_0,
         });
-        bounds_group.addLayer(layer_ins12_disp_2);
-        map.addLayer(layer_ins12_disp_2);
-        function pop_ins17_disp_3(feature, layer) {
+        bounds_group.addLayer(layer_ins12_disp_1);
+        map.addLayer(layer_ins12_disp_1);
+        function pop_ins17_disp_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>GEO_ID</strong><br />' + (feature.properties['GEO_ID'] !== null ? Autolinker.link(feature.properties['GEO_ID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
@@ -174,14 +153,17 @@
                     <tr>\
                         <td colspan="2"><strong>PCT_INS17</strong><br />' + (feature.properties['PCT_INS17'] !== null ? Autolinker.link(feature.properties['PCT_INS17'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MHHI (2017)</strong><br />' + (feature.properties['M17_DISP'] !== null ? Autolinker.link(feature.properties['M17_DISP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_ins17_disp_3_0(feature) {
+        function style_ins17_disp_2_0(feature) {
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins17'] >= 0.300000 && feature.properties['q2wHide_insured_2012_2017_pct_ins17'] <= 0.500000 ) {
                 return {
-                pane: 'pane_ins17_disp_3',
+                pane: 'pane_ins17_disp_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -191,7 +173,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins17'] >= 0.500000 && feature.properties['q2wHide_insured_2012_2017_pct_ins17'] <= 0.700000 ) {
                 return {
-                pane: 'pane_ins17_disp_3',
+                pane: 'pane_ins17_disp_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -201,7 +183,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins17'] >= 0.700000 && feature.properties['q2wHide_insured_2012_2017_pct_ins17'] <= 0.850000 ) {
                 return {
-                pane: 'pane_ins17_disp_3',
+                pane: 'pane_ins17_disp_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -211,7 +193,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins17'] >= 0.850000 && feature.properties['q2wHide_insured_2012_2017_pct_ins17'] <= 0.950000 ) {
                 return {
-                pane: 'pane_ins17_disp_3',
+                pane: 'pane_ins17_disp_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -221,7 +203,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins17'] >= 0.950000 && feature.properties['q2wHide_insured_2012_2017_pct_ins17'] <= 1.000000 ) {
                 return {
-                pane: 'pane_ins17_disp_3',
+                pane: 'pane_ins17_disp_2',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -230,21 +212,20 @@
             }
             }
         }
-        map.createPane('pane_ins17_disp_3');
-        map.getPane('pane_ins17_disp_3').style.zIndex = 403;
-        map.getPane('pane_ins17_disp_3').style['mix-blend-mode'] = 'normal';
-        var layer_ins17_disp_3 = new L.geoJson(json_ins17_disp_3, {
+        map.createPane('pane_ins17_disp_2');
+        map.getPane('pane_ins17_disp_2').style.zIndex = 402;
+        map.getPane('pane_ins17_disp_2').style['mix-blend-mode'] = 'normal';
+        var layer_ins17_disp_2 = new L.geoJson(json_ins17_disp_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ins17_disp_3',
-            layerName: 'layer_ins17_disp_3',
-            pane: 'pane_ins17_disp_3',
-            onEachFeature: pop_ins17_disp_3,
-            style: style_ins17_disp_3_0,
+            dataVar: 'json_ins17_disp_2',
+            layerName: 'layer_ins17_disp_2',
+            pane: 'pane_ins17_disp_2',
+            onEachFeature: pop_ins17_disp_2,
+            style: style_ins17_disp_2_0,
         });
-        bounds_group.addLayer(layer_ins17_disp_3);
-        map.addLayer(layer_ins17_disp_3);
-        function pop_chg_disp_4(feature, layer) {
+        bounds_group.addLayer(layer_ins17_disp_2);
+        function pop_chg_disp_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2"><strong>GEO_ID</strong><br />' + (feature.properties['GEO_ID'] !== null ? Autolinker.link(feature.properties['GEO_ID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
@@ -252,14 +233,20 @@
                     <tr>\
                         <td colspan="2"><strong>Change in Percent Insured</strong><br />' + (feature.properties['PCT_CHG'] !== null ? Autolinker.link(feature.properties['PCT_CHG'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MHHI (2012)</strong><br />' + (feature.properties['M12_DISP'] !== null ? Autolinker.link(feature.properties['M12_DISP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MHHI (2017)</strong><br />' + (feature.properties['M17_DISP'] !== null ? Autolinker.link(feature.properties['M17_DISP'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_chg_disp_4_0(feature) {
+        function style_chg_disp_3_0(feature) {
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] >= -0.144300 && feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] <= -0.050000 ) {
                 return {
-                pane: 'pane_chg_disp_4',
+                pane: 'pane_chg_disp_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -269,7 +256,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] >= -0.050000 && feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] <= 0.000000 ) {
                 return {
-                pane: 'pane_chg_disp_4',
+                pane: 'pane_chg_disp_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -279,7 +266,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] >= 0.000000 && feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] <= 0.050000 ) {
                 return {
-                pane: 'pane_chg_disp_4',
+                pane: 'pane_chg_disp_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -289,7 +276,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] >= 0.050000 && feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] <= 0.151800 ) {
                 return {
-                pane: 'pane_chg_disp_4',
+                pane: 'pane_chg_disp_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -299,7 +286,7 @@
             }
             if (feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] >= 0.151800 && feature.properties['q2wHide_insured_2012_2017_pct_ins_chg'] <= 0.616835 ) {
                 return {
-                pane: 'pane_chg_disp_4',
+                pane: 'pane_chg_disp_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -308,26 +295,31 @@
             }
             }
         }
-        map.createPane('pane_chg_disp_4');
-        map.getPane('pane_chg_disp_4').style.zIndex = 404;
-        map.getPane('pane_chg_disp_4').style['mix-blend-mode'] = 'normal';
-        var layer_chg_disp_4 = new L.geoJson(json_chg_disp_4, {
+        map.createPane('pane_chg_disp_3');
+        map.getPane('pane_chg_disp_3').style.zIndex = 403;
+        map.getPane('pane_chg_disp_3').style['mix-blend-mode'] = 'normal';
+        var layer_chg_disp_3 = new L.geoJson(json_chg_disp_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_chg_disp_4',
-            layerName: 'layer_chg_disp_4',
-            pane: 'pane_chg_disp_4',
-            onEachFeature: pop_chg_disp_4,
-            style: style_chg_disp_4_0,
+            dataVar: 'json_chg_disp_3',
+            layerName: 'layer_chg_disp_3',
+            pane: 'pane_chg_disp_3',
+            onEachFeature: pop_chg_disp_3,
+            style: style_chg_disp_3_0,
         });
-        bounds_group.addLayer(layer_chg_disp_4);
-        map.addLayer(layer_chg_disp_4);
-        function pop_cty_border_5(feature, layer) {
+        bounds_group.addLayer(layer_chg_disp_3);
+        function pop_Lines_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? Autolinker.link(feature.properties['fid'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_cty_border_5_0() {
+        function style_Lines_4_0() {
             return {
-                pane: 'pane_cty_border_5',
+                pane: 'pane_Lines_4',
                 opacity: 1,
                 color: 'rgba(0,0,4,1.0)',
                 dashArray: '',
@@ -338,27 +330,115 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_cty_border_5');
-        map.getPane('pane_cty_border_5').style.zIndex = 405;
-        map.getPane('pane_cty_border_5').style['mix-blend-mode'] = 'normal';
-        var layer_cty_border_5 = new L.geoJson(json_cty_border_5, {
+        map.createPane('pane_Lines_4');
+        map.getPane('pane_Lines_4').style.zIndex = 404;
+        map.getPane('pane_Lines_4').style['mix-blend-mode'] = 'normal';
+        var layer_Lines_4 = new L.geoJson(json_Lines_4, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_cty_border_5',
-            layerName: 'layer_cty_border_5',
-            pane: 'pane_cty_border_5',
-            onEachFeature: pop_cty_border_5,
-            style: style_cty_border_5_0,
+            dataVar: 'json_Lines_4',
+            layerName: 'layer_Lines_4',
+            pane: 'pane_Lines_4',
+            onEachFeature: pop_Lines_4,
+            style: style_Lines_4_0,
         });
-        bounds_group.addLayer(layer_cty_border_5);
-        map.addLayer(layer_cty_border_5);
-				var disp_layers = {
-				  "Percent Insured (2012)": layer_ins12_disp_2,
-				  "Percent Insured (2017)": layer_ins17_disp_3,
-				  "Percent Change": layer_chg_disp_4
+        bounds_group.addLayer(layer_Lines_4);
+        map.addLayer(layer_Lines_4);
+		var disp_layers = {
+				  "Percent Insured (2012)": layer_ins12_disp_1,
+				  "Percent Insured (2017)": layer_ins17_disp_2,
+				  "Percent Change": layer_chg_disp_3
 				};
 				L.control.layers(disp_layers).addTo(map);
-        setBounds();
+				
+ 
+		function getColor(d) {
+    return d > 95  ? '#08306B' :
+           d > 85   ? '#2879B9' :
+           d > 70   ? '#73B3D8' :
+           d > 50   ? '#C8DDF0' :
+                      '#F7FBFF';
+}
+
+/*
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [30, 50, 70, 85, 95, 100],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length - 1; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + '% &ndash; ' + grades[i + 1] + '%<br>');
+    }
+
+    return div;
+};
+
+legend.addTo(map);
+*/
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [30, 50, 70, 85, 95, 100],
+        labels = ["<strong>Percent Insured</strong>"],
+		from,to;
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length - 1; i++) {
+        from = grades[i];
+			to = grades[i + 1];
+
+			labels.push(
+				'<i style="background:' + getColor(from + 1) + '"></i> ' +
+				from + (to ? '&#37; &ndash; ' + to : '+')+ '&#37;') ;
+		}
+
+		div.innerHTML = labels.join('<br>');
+		return div;
+};
+
+legend.addTo(map);
+
+function getColor2(d) {
+    return d > 15  ? '#a6611a' :
+           d > 5   ? '#dfc27d' :
+           d > 0   ? '#f5f5f5' :
+           d > -5   ? '#80cdc1' :
+                      '#018571';
+}
+
+var legend2 = L.control({position: 'bottomleft'});
+
+legend2.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [-15, -5, 0, 5, 15, 63],
+        labels = ["<strong>Change</strong>"],
+		from,to;
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length - 1; i++) {
+        from = grades[i];
+			to = grades[i + 1];
+
+			labels.push(
+				'<i style="background:' + getColor2(from + 1) + '"></i> ' +
+				from + '&#37; &ndash; ' + to + '&#37;') ;
+		}
+
+		div.innerHTML = labels.join('<br>');
+		return div;
+};
+
+legend2.addTo(map);
+setBounds();
         </script>
     </body>
 </html>

@@ -6,8 +6,14 @@
   
 **Main Takeaway:** ???
 
-Data Source: American Community Survey via [data.census.gov](https://data.census.gov)  
+Data Source: American Community Survey via [data.census.gov](https://data.census.gov)   
 
-[<img src="images/preview.png?raw=true">](https://jdrew3.github.io/project1_486/webmap/index.html#9/38.7605/-77.4097)  
+### Web Map  
+[<img src="images/preview.png?raw=true">](https://jdrew3.github.io/project1_486/webmap/index.html#9/38.7605/-77.4097)    
 
-[Link to Full Map](https://jdrew3.github.io/project1_486/webmap/index.html#9/38.7605/-77.4097)  
+[Link to Web Map](https://jdrew3.github.io/project1_486/webmap/index.html#9/38.7605/-77.4097)    
+
+### PDF  
+[<img src="images/pdf_preview.png?raw=true">](basic_compare.pdf)   
+
+[Link to Full Graphic](basic_compare.pdf)   

@@ -11,9 +11,9 @@ Feature engineering and sentiment analysis of tweets
 
 ### GIS Projects
 
-[Project 1 Title](/project1_486/landing)
-Percentage of people with health insurance in Maryland
-[<img src="project1_486/images/preview.png?raw=true">](/project1_486/landing)  
+[Health Insurance in Maryland](/project1_486/landing)   
+Percentage of people with health insurance in Maryland   
+[<img src="project1_486/images/preview.png?raw=true">](/project1_486/landing)   
 
 [Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  
 Displaying percentage of Baltimore households in poverty and within a grocery store's service area 

@@ -13,7 +13,7 @@ Data Source: American Community Survey via [data.census.gov](https://data.census
 
 [Link to Web Map](https://jdrew3.github.io/project1_486/webmap/index.html#9/38.7605/-77.4097)    
 
-### Side-by-Size Comparison
+### Side-by-Side Comparison
 [<img src="images/pdf_preview.png?raw=true">](basic_compare.pdf)   
 
 [Link to Full Graphic](basic_compare.pdf)   

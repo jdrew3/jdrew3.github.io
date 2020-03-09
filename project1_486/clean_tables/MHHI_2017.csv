@@ -96,7 +96,7 @@ GEO_ID,NAME,MHHI
 1400000US24003740303,"Census Tract 7403.03, Anne Arundel County, Maryland",98958
 1400000US24003740304,"Census Tract 7403.04, Anne Arundel County, Maryland",95258
 1400000US24003740305,"Census Tract 7403.05, Anne Arundel County, Maryland",92478
-1400000US24003740400,"Census Tract 7404, Anne Arundel County, Maryland",NA
+1400000US24003740400,"Census Tract 7404, Anne Arundel County, Maryland",
 1400000US24003740500,"Census Tract 7405, Anne Arundel County, Maryland",110486
 1400000US24003740601,"Census Tract 7406.01, Anne Arundel County, Maryland",76343
 1400000US24003740602,"Census Tract 7406.02, Anne Arundel County, Maryland",64981
@@ -125,8 +125,8 @@ GEO_ID,NAME,MHHI
 1400000US24003751500,"Census Tract 7515, Anne Arundel County, Maryland",71451
 1400000US24003751600,"Census Tract 7516, Anne Arundel County, Maryland",81295
 1400000US24003751700,"Census Tract 7517, Anne Arundel County, Maryland",172604
-1400000US24003980000,"Census Tract 9800, Anne Arundel County, Maryland",NA
-1400000US24003990000,"Census Tract 9900, Anne Arundel County, Maryland",NA
+1400000US24003980000,"Census Tract 9800, Anne Arundel County, Maryland",
+1400000US24003990000,"Census Tract 9900, Anne Arundel County, Maryland",
 1400000US24005400100,"Census Tract 4001, Baltimore County, Maryland",49833
 1400000US24005400200,"Census Tract 4002, Baltimore County, Maryland",76389
 1400000US24005400400,"Census Tract 4004, Baltimore County, Maryland",114386
@@ -336,11 +336,11 @@ GEO_ID,NAME,MHHI
 1400000US24005492300,"Census Tract 4923, Baltimore County, Maryland",70066
 1400000US24005492401,"Census Tract 4924.01, Baltimore County, Maryland",88237
 1400000US24005492402,"Census Tract 4924.02, Baltimore County, Maryland",76063
-1400000US24005492500,"Census Tract 4925, Baltimore County, Maryland",NA
+1400000US24005492500,"Census Tract 4925, Baltimore County, Maryland",
 1400000US24005492600,"Census Tract 4926, Baltimore County, Maryland",66494
-1400000US24005980000,"Census Tract 9800, Baltimore County, Maryland",NA
-1400000US24005980100,"Census Tract 9801, Baltimore County, Maryland",NA
-1400000US24005980200,"Census Tract 9802, Baltimore County, Maryland",NA
+1400000US24005980000,"Census Tract 9800, Baltimore County, Maryland",
+1400000US24005980100,"Census Tract 9801, Baltimore County, Maryland",
+1400000US24005980200,"Census Tract 9802, Baltimore County, Maryland",
 1400000US24009860101,"Census Tract 8601.01, Calvert County, Maryland",124706
 1400000US24009860102,"Census Tract 8601.02, Calvert County, Maryland",84609
 1400000US24009860200,"Census Tract 8602, Calvert County, Maryland",126859
@@ -359,7 +359,7 @@ GEO_ID,NAME,MHHI
 1400000US24009861001,"Census Tract 8610.01, Calvert County, Maryland",130000
 1400000US24009861003,"Census Tract 8610.03, Calvert County, Maryland",81068
 1400000US24009861004,"Census Tract 8610.04, Calvert County, Maryland",85612
-1400000US24009990100,"Census Tract 9901, Calvert County, Maryland",NA
+1400000US24009990100,"Census Tract 9901, Calvert County, Maryland",
 1400000US24011955000,"Census Tract 9550, Caroline County, Maryland",45346
 1400000US24011955100,"Census Tract 9551, Caroline County, Maryland",58281
 1400000US24011955201,"Census Tract 9552.01, Caroline County, Maryland",51250
@@ -456,7 +456,7 @@ GEO_ID,NAME,MHHI
 1400000US24017851302,"Census Tract 8513.02, Charles County, Maryland",114241
 1400000US24017851400,"Census Tract 8514, Charles County, Maryland",124411
 1400000US24017851500,"Census Tract 8515, Charles County, Maryland",91489
-1400000US24017990000,"Census Tract 9900, Charles County, Maryland",NA
+1400000US24017990000,"Census Tract 9900, Charles County, Maryland",
 1400000US24019970100,"Census Tract 9701, Dorchester County, Maryland",57266
 1400000US24019970200,"Census Tract 9702, Dorchester County, Maryland",58651
 1400000US24019970300,"Census Tract 9703, Dorchester County, Maryland",63631
@@ -466,7 +466,7 @@ GEO_ID,NAME,MHHI
 1400000US24019970702,"Census Tract 9707.02, Dorchester County, Maryland",62255
 1400000US24019970804,"Census Tract 9708.04, Dorchester County, Maryland",61971
 1400000US24019970900,"Census Tract 9709, Dorchester County, Maryland",55492
-1400000US24019990000,"Census Tract 9900, Dorchester County, Maryland",NA
+1400000US24019990000,"Census Tract 9900, Dorchester County, Maryland",
 1400000US24021740200,"Census Tract 7402, Frederick County, Maryland",85313
 1400000US24021750100,"Census Tract 7501, Frederick County, Maryland",63155
 1400000US24021750200,"Census Tract 7502, Frederick County, Maryland",78380
@@ -652,7 +652,7 @@ GEO_ID,NAME,MHHI
 1400000US24029950300,"Census Tract 9503, Kent County, Maryland",51557
 1400000US24029950400,"Census Tract 9504, Kent County, Maryland",67292
 1400000US24029950500,"Census Tract 9505, Kent County, Maryland",47917
-1400000US24029990000,"Census Tract 9900, Kent County, Maryland",NA
+1400000US24029990000,"Census Tract 9900, Kent County, Maryland",
 1400000US24031700101,"Census Tract 7001.01, Montgomery County, Maryland",162171
 1400000US24031700103,"Census Tract 7001.03, Montgomery County, Maryland",151435
 1400000US24031700104,"Census Tract 7001.04, Montgomery County, Maryland",114762
@@ -840,16 +840,16 @@ GEO_ID,NAME,MHHI
 1400000US24031704502,"Census Tract 7045.02, Montgomery County, Maryland",201429
 1400000US24031704503,"Census Tract 7045.03, Montgomery County, Maryland",208220
 1400000US24031704600,"Census Tract 7046, Montgomery County, Maryland",206500
-1400000US24031704700,"Census Tract 7047, Montgomery County, Maryland",NA
+1400000US24031704700,"Census Tract 7047, Montgomery County, Maryland",
 1400000US24031704803,"Census Tract 7048.03, Montgomery County, Maryland",71774
 1400000US24031704804,"Census Tract 7048.04, Montgomery County, Maryland",106953
 1400000US24031704805,"Census Tract 7048.05, Montgomery County, Maryland",96875
 1400000US24031704806,"Census Tract 7048.06, Montgomery County, Maryland",94623
 1400000US24031705000,"Census Tract 7050, Montgomery County, Maryland",148060
 1400000US24031705100,"Census Tract 7051, Montgomery County, Maryland",201534
-1400000US24031705200,"Census Tract 7052, Montgomery County, Maryland",NA
-1400000US24031705300,"Census Tract 7053, Montgomery County, Maryland",NA
-1400000US24031705400,"Census Tract 7054, Montgomery County, Maryland",NA
+1400000US24031705200,"Census Tract 7052, Montgomery County, Maryland",
+1400000US24031705300,"Census Tract 7053, Montgomery County, Maryland",
+1400000US24031705400,"Census Tract 7054, Montgomery County, Maryland",
 1400000US24031705501,"Census Tract 7055.01, Montgomery County, Maryland",108011
 1400000US24031705502,"Census Tract 7055.02, Montgomery County, Maryland",214286
 1400000US24031705601,"Census Tract 7056.01, Montgomery County, Maryland",235938
@@ -863,7 +863,7 @@ GEO_ID,NAME,MHHI
 1400000US24031706005,"Census Tract 7060.05, Montgomery County, Maryland",227778
 1400000US24031706007,"Census Tract 7060.07, Montgomery County, Maryland",237298
 1400000US24031706008,"Census Tract 7060.08, Montgomery County, Maryland",218431
-1400000US24031706009,"Census Tract 7060.09, Montgomery County, Maryland",NA
+1400000US24031706009,"Census Tract 7060.09, Montgomery County, Maryland",
 1400000US24031706010,"Census Tract 7060.10, Montgomery County, Maryland",136688
 1400000US24031706011,"Census Tract 7060.11, Montgomery County, Maryland",204844
 1400000US24031706012,"Census Tract 7060.12, Montgomery County, Maryland",66778
@@ -1097,9 +1097,9 @@ GEO_ID,NAME,MHHI
 1400000US24035810901,"Census Tract 8109.01, Queen Anne's County, Maryland",113500
 1400000US24035810902,"Census Tract 8109.02, Queen Anne's County, Maryland",91444
 1400000US24035811000,"Census Tract 8110, Queen Anne's County, Maryland",80324
-1400000US24035990000,"Census Tract 9900, Queen Anne's County, Maryland",NA
-1400000US24035990100,"Census Tract 9901, Queen Anne's County, Maryland",NA
-1400000US24035990200,"Census Tract 9902, Queen Anne's County, Maryland",NA
+1400000US24035990000,"Census Tract 9900, Queen Anne's County, Maryland",
+1400000US24035990100,"Census Tract 9901, Queen Anne's County, Maryland",
+1400000US24035990200,"Census Tract 9902, Queen Anne's County, Maryland",
 1400000US24037875000,"Census Tract 8750, St. Mary's County, Maryland",99547
 1400000US24037875100,"Census Tract 8751, St. Mary's County, Maryland",88438
 1400000US24037875201,"Census Tract 8752.01, St. Mary's County, Maryland",96803
@@ -1117,15 +1117,15 @@ GEO_ID,NAME,MHHI
 1400000US24037876002,"Census Tract 8760.02, St. Mary's County, Maryland",79239
 1400000US24037876100,"Census Tract 8761, St. Mary's County, Maryland",100685
 1400000US24037876200,"Census Tract 8762, St. Mary's County, Maryland",92130
-1400000US24037990000,"Census Tract 9900, St. Mary's County, Maryland",NA
+1400000US24037990000,"Census Tract 9900, St. Mary's County, Maryland",
 1400000US24039930101,"Census Tract 9301.01, Somerset County, Maryland",27384
 1400000US24039930102,"Census Tract 9301.02, Somerset County, Maryland",53591
 1400000US24039930200,"Census Tract 9302, Somerset County, Maryland",35735
 1400000US24039930300,"Census Tract 9303, Somerset County, Maryland",43250
 1400000US24039930500,"Census Tract 9305, Somerset County, Maryland",53161
 1400000US24039930600,"Census Tract 9306, Somerset County, Maryland",30465
-1400000US24039980400,"Census Tract 9804, Somerset County, Maryland",NA
-1400000US24039990100,"Census Tract 9901, Somerset County, Maryland",NA
+1400000US24039980400,"Census Tract 9804, Somerset County, Maryland",
+1400000US24039990100,"Census Tract 9901, Somerset County, Maryland",
 1400000US24041960100,"Census Tract 9601, Talbot County, Maryland",84583
 1400000US24041960201,"Census Tract 9602.01, Talbot County, Maryland",93618
 1400000US24041960300,"Census Tract 9603, Talbot County, Maryland",40759
@@ -1136,7 +1136,7 @@ GEO_ID,NAME,MHHI
 1400000US24041960700,"Census Tract 9607, Talbot County, Maryland",74219
 1400000US24041960800,"Census Tract 9608, Talbot County, Maryland",70402
 1400000US24041960900,"Census Tract 9609, Talbot County, Maryland",77854
-1400000US24041990000,"Census Tract 9900, Talbot County, Maryland",NA
+1400000US24041990000,"Census Tract 9900, Talbot County, Maryland",
 1400000US24043000100,"Census Tract 1, Washington County, Maryland",61063
 1400000US24043000200,"Census Tract 2, Washington County, Maryland",58417
 1400000US24043000301,"Census Tract 3.01, Washington County, Maryland",41800
@@ -1160,7 +1160,7 @@ GEO_ID,NAME,MHHI
 1400000US24043010801,"Census Tract 108.01, Washington County, Maryland",55139
 1400000US24043010802,"Census Tract 108.02, Washington County, Maryland",51681
 1400000US24043010900,"Census Tract 109, Washington County, Maryland",74661
-1400000US24043011000,"Census Tract 110, Washington County, Maryland",NA
+1400000US24043011000,"Census Tract 110, Washington County, Maryland",
 1400000US24043011100,"Census Tract 111, Washington County, Maryland",50332
 1400000US24043011201,"Census Tract 112.01, Washington County, Maryland",59141
 1400000US24043011202,"Census Tract 112.02, Washington County, Maryland",62500
@@ -1203,8 +1203,8 @@ GEO_ID,NAME,MHHI
 1400000US24047951400,"Census Tract 9514, Worcester County, Maryland",55742
 1400000US24047951500,"Census Tract 9515, Worcester County, Maryland",35943
 1400000US24047951700,"Census Tract 9517, Worcester County, Maryland",58425
-1400000US24047980000,"Census Tract 9800, Worcester County, Maryland",NA
-1400000US24047990000,"Census Tract 9900, Worcester County, Maryland",NA
+1400000US24047980000,"Census Tract 9800, Worcester County, Maryland",
+1400000US24047990000,"Census Tract 9900, Worcester County, Maryland",
 1400000US24510010100,"Census Tract 101, Baltimore city, Maryland",95625
 1400000US24510010200,"Census Tract 102, Baltimore city, Maryland",109102
 1400000US24510010300,"Census Tract 103, Baltimore city, Maryland",137275
@@ -1246,7 +1246,7 @@ GEO_ID,NAME,MHHI
 1400000US24510090900,"Census Tract 909, Baltimore city, Maryland",23816
 1400000US24510100100,"Census Tract 1001, Baltimore city, Maryland",24146
 1400000US24510100200,"Census Tract 1002, Baltimore city, Maryland",14452
-1400000US24510100300,"Census Tract 1003, Baltimore city, Maryland",NA
+1400000US24510100300,"Census Tract 1003, Baltimore city, Maryland",
 1400000US24510110100,"Census Tract 1101, Baltimore city, Maryland",49411
 1400000US24510110200,"Census Tract 1102, Baltimore city, Maryland",42167
 1400000US24510120100,"Census Tract 1201, Baltimore city, Maryland",62266
@@ -1334,7 +1334,7 @@ GEO_ID,NAME,MHHI
 1400000US24510250401,"Census Tract 2504.01, Baltimore city, Maryland",41622
 1400000US24510250402,"Census Tract 2504.02, Baltimore city, Maryland",42163
 1400000US24510250500,"Census Tract 2505, Baltimore city, Maryland",37258
-1400000US24510250600,"Census Tract 2506, Baltimore city, Maryland",NA
+1400000US24510250600,"Census Tract 2506, Baltimore city, Maryland",
 1400000US24510260101,"Census Tract 2601.01, Baltimore city, Maryland",50981
 1400000US24510260102,"Census Tract 2601.02, Baltimore city, Maryland",52560
 1400000US24510260201,"Census Tract 2602.01, Baltimore city, Maryland",34417

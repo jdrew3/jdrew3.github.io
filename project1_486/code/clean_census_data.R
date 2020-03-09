@@ -31,13 +31,13 @@ csv <- loadCensusCSV(getCSV(csvs,tab,yr),na=c("","NA","-","250,000+"),
                      col_types = cols(),col_names = T,skip_row = 1)
 names(csv)[3] <- "MHHI"
 
-write_csv(csv,paste0("clean_tables/MHHI_",yr,".csv"))
+write_csv(csv,paste0("clean_tables/MHHI_",yr,".csv"),na="")
 
 yr <- "2017"
 csv <- loadCensusCSV(getCSV(csvs,tab,yr),na=c("","NA","-","250,000+"),
                      col_types = cols(),col_names = T,skip_row = 1)
 names(csv)[3] <- "MHHI"
-write_csv(csv,paste0("clean_tables/MHHI_",yr,".csv"))
+write_csv(csv,paste0("clean_tables/MHHI_",yr,".csv"),na="")
 
 tab <- "B27001"
 yr <- "2012"

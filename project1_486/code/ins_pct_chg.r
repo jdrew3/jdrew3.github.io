@@ -2,7 +2,8 @@ library(readr)
 library(stringr)
 library(dplyr)
 
-setwd("C:/Users/Justin/Documents/Classes/SP20/GES 486/proj1")
+#setwd("C:/Users/Justin/Documents/Classes/SP20/GES 486/proj1")
+setwd("Z:/ges486/Project1")
 
 as.pct <- function(x, digits = 2) {
   round(x*100, digits = digits)
@@ -27,3 +28,11 @@ print(paste0("Percent Insured in 2017: ",as.pct(pct_ins.17),"%"))
 print(paste0("Percent Change: ",as.pct(chg),"%"))
 
 write_csv(ins.12.17,"summary_data/insured_2012_2017.csv")
+
+mhhi.12 <- read_csv("clean_tables/MHHI_2012.csv",col_types = cols())
+mhhi.17 <- read_csv("clean_tables/MHHI_2017.csv",col_types = cols())
+nm <- c("GEO_ID","MHHI")
+ins.12.17.mhhi <- ins.12.17 %>% inner_join(mhhi.12[nm], by = c("GEOID"="GEO_ID")) %>%
+  inner_join(mhhi.17[nm], by = c("GEOID"="GEO_ID"),suffix = c("12","17"))
+
+write_csv(ins.12.17,"summary_data/insured_mhhi_2012_2017.csv")

@@ -1,10 +1,8 @@
 ## Health Insurance in Maryland
 
-**Project description:** A map of the percentage of population with health insurance for 2012 and 2017. (And MHHI?)   
+**Project description:** A map of the percentage of population with health insurance for 2012 and 2017. 
   
-**Tools Used:** QGIS (visualization), R (data pre-processing)  
-  
-**Main Takeaway:** ???
+**Tools Used:** QGIS (visualization), R (data pre-processing)   
 
 Data Source: American Community Survey via [data.census.gov](https://data.census.gov)   
 

@@ -1,4 +1,4 @@
-## The COVID-19 Crisis and the Sanders Campaign  
+## The COVID-19 Pandemic and the Sanders Campaign  
 
 **Project description:** This interactive webmap a bivariate chloropleth map of the number of tweets per million people for two topics during mid-March 2020: COVID-19 and Senator Bernard Sanders. The choice of the second topic was motivated by personal observation of my twitter timeline seeing a lot of people start bringing up the promises of the Sanders campaign whenever people were the discussing the current administration's handling of the pandemic.  
   

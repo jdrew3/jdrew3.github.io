@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/disp_1.js"></script>
+        <script src="data/disp_bernie_2.js"></script>
+        <script src="data/disp_covid_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[0.976195152656949,-143.4519172556673],[73.81685691736217,-49.234104755668156]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var layer_StamenTonerLite_0 = L.tileLayer('http://a.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 22
+        });
+        layer_StamenTonerLite_0;
+        map.addLayer(layer_StamenTonerLite_0);
+        function pop_disp_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>GEO_ID</strong><br />' + (feature.properties['GEO_ID'] !== null ? Autolinker.link(feature.properties['GEO_ID'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>NAME</strong><br />' + (feature.properties['NAME'] !== null ? Autolinker.link(feature.properties['NAME'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Bernie Tweets per 1M People</strong><br />' + (feature.properties['BerTw_p1M'] !== null ? Autolinker.link(feature.properties['BerTw_p1M'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>COVID-19 Tweets per 1M People</strong><br />' + (feature.properties['CovTw_p1M'] !== null ? Autolinker.link(feature.properties['CovTw_p1M'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_disp_1_0(feature) {
+            switch(String(feature.properties['q2wHide_Bi_Class'])) {
+                case 'A1':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,232,232,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'A2':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,176,214,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'B1':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(172,228,228,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'B2':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,173,211,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'B3':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,98,170,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'C2':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(86,152,185,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'C3':
+                    return {
+                pane: 'pane_disp_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(59,73,148,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_disp_1');
+        map.getPane('pane_disp_1').style.zIndex = 401;
+        map.getPane('pane_disp_1').style['mix-blend-mode'] = 'multiply';
+        var layer_disp_1 = new L.geoJson(json_disp_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_disp_1',
+            layerName: 'layer_disp_1',
+            pane: 'pane_disp_1',
+            onEachFeature: pop_disp_1,
+            style: style_disp_1_0,
+        });
+        bounds_group.addLayer(layer_disp_1);
+        map.addLayer(layer_disp_1);
+        function pop_disp_bernie_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? Autolinker.link(feature.properties['fid'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['status_id'] !== null ? Autolinker.link(feature.properties['status_id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_disp_bernie_2_0() {
+            return {
+                pane: 'pane_disp_bernie_2',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(90,200,200,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_disp_bernie_2');
+        map.getPane('pane_disp_bernie_2').style.zIndex = 402;
+        map.getPane('pane_disp_bernie_2').style['mix-blend-mode'] = 'normal';
+        var layer_disp_bernie_2 = new L.geoJson(json_disp_bernie_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_disp_bernie_2',
+            layerName: 'layer_disp_bernie_2',
+            pane: 'pane_disp_bernie_2',
+            onEachFeature: pop_disp_bernie_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_disp_bernie_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_disp_bernie_2);
+        map.addLayer(layer_disp_bernie_2);
+        function pop_disp_covid_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? Autolinker.link(feature.properties['fid'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['status_id'] !== null ? Autolinker.link(feature.properties['status_id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_disp_covid_3_0() {
+            return {
+                pane: 'pane_disp_covid_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,100,172,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_disp_covid_3');
+        map.getPane('pane_disp_covid_3').style.zIndex = 403;
+        map.getPane('pane_disp_covid_3').style['mix-blend-mode'] = 'normal';
+        var layer_disp_covid_3 = new L.geoJson(json_disp_covid_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_disp_covid_3',
+            layerName: 'layer_disp_covid_3',
+            pane: 'pane_disp_covid_3',
+            onEachFeature: pop_disp_covid_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_disp_covid_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_disp_covid_3);
+        map.addLayer(layer_disp_covid_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/disp_covid_3.png" /> COVID-19 Tweets': layer_disp_covid_3,'<img src="legend/disp_bernie_2.png" /> Bernie Sanders Tweets': layer_disp_bernie_2,/*'disp<br /><table><tr><td style="text-align: center;"><img src="legend/disp_1_A10.png" /></td><td>A1</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_A21.png" /></td><td>A2</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_B12.png" /></td><td>B1</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_B23.png" /></td><td>B2</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_B34.png" /></td><td>B3</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_C25.png" /></td><td>C2</td></tr><tr><td style="text-align: center;"><img src="legend/disp_1_C36.png" /></td><td>C3</td></tr></table>': layer_disp_1,"Stamen Toner Lite": layer_StamenTonerLite_0,*/},{collapsed:false}).addTo(map);
+				
+				
+				L.Control.Watermark = L.Control.extend({
+    onAdd: function(map) {
+        var img = L.DomUtil.create('img');
+
+        img.src = 'legend/bi_legend.png';
+        img.style.width = '60%';
+
+        return img;
+    },
+
+    onRemove: function(map) {
+        // Nothing to do here
+    }
+});
+
+L.control.watermark = function(opts) {
+    return new L.Control.Watermark(opts);
+}
+
+L.control.watermark({ position: 'bottomright' }).addTo(map);
+				
+        setBounds();
+        </script>
+    </body>
+</html>

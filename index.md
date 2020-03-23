@@ -11,10 +11,16 @@ Feature engineering and sentiment analysis of tweets
 
 ### GIS Projects
 
+[Twitter Map: The COVID-19 Crisis and the Sanders Campaign](/projects/project_web2)   
+Interactive bivariate choropleth map comparing tweets per capita by state  
+[<img src="images/tweets_map1_thum.jpg?raw=true">](/projects/project_web2)  
+
+---   
 [Health Insurance in Maryland](/project1_486/landing)   
 Percentage of people with health insurance in Maryland   
 [<img src="project1_486/images/preview.png?raw=true">](/project1_486/landing)   
 
+---   
 [Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  
 Displaying percentage of Baltimore households in poverty and within a grocery store's service area 
 [<img src="images/webmap_lab_thum.jpg?raw=true">](/projects/project_web1)  

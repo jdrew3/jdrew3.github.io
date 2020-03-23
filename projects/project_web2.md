@@ -10,6 +10,6 @@
 
 Data Sources: Twitter, American Factfinder
 
-[<img src="../images/webmap_lab_thum.jpg?raw=true"/>](../pages/tweets_map1/index.html#5/38.065/-92.505)  
+[<img src="../images/tweets_map1_thum.jpg?raw=true"/>](../pages/tweets_map1/index.html#5/38.065/-92.505)  
 
 [Full Map](../pages/tweets_map1/index.html#5/38.065/-92.505)  

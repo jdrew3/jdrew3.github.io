@@ -11,6 +11,11 @@ Feature engineering and sentiment analysis of tweets
 
 ### GIS Projects
 
+[Owner-Occupancy in Maryland](/project2_486/landing)   
+Interactive map of owner-occupancy rates across Maryland by Census Tract   
+[<img src="project2_486/proj2_webmap_thum.png?raw=true">](/project2_486/landing)      
+
+---   
 [Twitter Map: The COVID-19 Crisis and the Sanders Campaign](/projects/project_web2)   
 Interactive bivariate choropleth map comparing tweets per capita by state  
 [<img src="images/tweets_map1_thum.jpg?raw=true">](/projects/project_web2)  

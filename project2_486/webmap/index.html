@@ -48,13 +48,13 @@
 		
 		/* From https://esri.github.io/esri-leaflet/examples/dynamic-chart.html */
 		.chart-container {
-			height: 245px;
-			width: 245px;
+			height: 300px;
+			width: 300px;
 		}
 		#info-pane {
 			position: absolute;
-			top: 10px;
-			right: 10px;
+			top: 5px;
+			right: 5px;
 			z-index: 400;
 			padding: 1em;
 			background: white;
@@ -99,7 +99,7 @@
         ticks: {
           beginAtZero: true,
           max: 250000,
-          stepSize: 50000
+          stepSize: 62500
         }
       }],
       yAxes: [{
@@ -110,7 +110,7 @@
         ticks: {
           beginAtZero: true,
           max: 100,
-          stepSize: 20
+          stepSize: 25
         }
       }]
     },
@@ -138,6 +138,8 @@
 		feature.properties.ownOccUnits +
 		'<br /><strong>Owner-Occupied Units per 100 Units</strong> <br />'+
 		feature.properties.ownOcc_total_pct +
+		'<br /><strong>Median Household Income (USD)</strong> <br />&#36;'+
+		feature.properties.mhhi +
 		'</table>';
 		
         layer.bindPopup(text);
@@ -171,11 +173,20 @@
 		
 		function style_output(feature) {
 			var prop = 'ownOcc_total_pct';
+			if(feature.properties[prop]) {
 			return {
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
                 fillColor: getColor(feature.properties[prop]),
+                interactive: true,
+            }
+			}
+			return {
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: "#555",
                 interactive: true,
             }
         }
@@ -290,6 +301,8 @@
 					getColor(from + 1) + '"></i> ' +
 					from + ' &ndash; ' + to + '') ;
 			}
+			labels.push(
+					'<i style="background:#555"></i> No Data') ;
 
 			div.innerHTML = labels.join('<br>');
 			return div;

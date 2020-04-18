@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset = "UTF-8" />
+    <title>Owner-Occupancy Rates in MD</title>
+	
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+    <script src="src/leaflet-timeline-slider.js"></script>
+	
+	<style>
+		html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+		
+		/* From https://leafletjs.com/examples/choropleth/ */
+		.info {
+			padding: 6px 8px;
+			font: 14px/18px Arial, Helvetica, sans-serif;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.legend {
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+		
+		/* From https://esri.github.io/esri-leaflet/examples/dynamic-chart.html */
+		.chart-container {
+			height: 245px;
+			width: 245px;
+		}
+		#info-pane {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 400;
+			padding: 1em;
+			background: white;
+		}
+    </style>
+    
+</head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+		<div id="map"></div>
+		<div id="info-pane" class="leaflet-bar chart-container">
+			<canvas id="chartCanvas"></canvas>
+		</div>
+
+        <script src="geojs/output2010.js"></script>
+		<script src="geojs/output2011.js"></script>
+        <script src="geojs/output2012.js"></script>
+		<script src="geojs/output2013.js"></script>
+        <script src="geojs/output2014.js"></script>
+		<script src="geojs/output2015.js"></script>
+        <script src="geojs/output2016.js"></script>
+		<script src="geojs/output2017.js"></script>
+        <script src="geojs/output2018.js"></script>
+		<script src="geojs/county_lines.js"></script>
+        <script>
+		
+		var initialChartData = {
+			datasets: [{
+				label: 'MHHI vs Owner-Occupied Units per 100 Units',
+				data: [{x: 10000, y: 20}]
+			}]
+		};
+  
+  var chartOptions = {
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Median Household Income (USD)'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 250000,
+          stepSize: 50000
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Owner-Occupied Units per 100 Units'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 100,
+          stepSize: 20
+        }
+      }]
+    },
+    maintainAspectRatio: false,
+    animation: {
+      duration: 1000
+    }
+  };
+  
+  var chart = new Chart('chartCanvas', {
+    type: 'scatter',
+    data: initialChartData,
+    options: chartOptions
+  });
+  
+		
+		function pop(feature, layer) {
+    if (feature.properties && feature.properties["ownOcc_total_pct"]) {
+		var text = '<table> \
+		<strong>Total Housing Units</strong> <br />'+
+		feature.properties.totalUnits +
+		'<br /><strong>Occupied Housing Units</strong> <br />'+
+		feature.properties.occupUnits +
+		'<br /><strong>Owner-Occupied Units</strong> <br />'+
+		feature.properties.ownOccUnits +
+		'<br /><strong>Owner-Occupied Units per 100 Units</strong> <br />'+
+		feature.properties.ownOcc_total_pct +
+		'</table>';
+		
+        layer.bindPopup(text);
+    }
+}
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:2
+        }).fitBounds([[37.9,-79.5],[39.7,-75]]);
+        
+        map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot <a href="https://github.com/svitkin/leaflet-timeline-slider" title="Plugin for leaflet that creates a customizable timeline slider">leaflet-timeline-slider</a> &middot <a href="https://colorbrewer2.org/#type=diverging&scheme=BrBG&n=6" title="Color Advice for Maps">ColorBrewer</a> &middot <a href="https://www.chartjs.org/" title="Open source HTML5 Charts for your website">Chart.js</a>');
+		 
+        var layer_EsriDarkGray_0 = L.tileLayer('http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 22
+        });
+        layer_EsriDarkGray_0;
+        map.addLayer(layer_EsriDarkGray_0);
+		
+		function getColor(d) {
+			return d > 80  ? "#01665E":
+			d > 65  ? "#5AB4AC" :
+			d > 40  ? "#C7EAE5" :
+			d > 25  ? "#F6E8C3"  :
+			d > 10  ? "#D8B365" :
+					"#8C510A";
+		}
+		
+		function style_output(feature) {
+			var prop = 'ownOcc_total_pct';
+			return {
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: getColor(feature.properties[prop]),
+                interactive: true,
+            }
+        }
+		
+		function style_lines() {
+            return {
+                opacity: 1,
+                color: 'rgba(0,0,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+		
+		var layer_lines = L.geoJson(lines, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'lines',
+            layerName: 'layer_lines',
+            style: style_lines,
+        }).addTo(map);
+		
+		var disp_lyr = new L.geoJson(output2010, {
+				attribution: '',
+				interactive: false,
+				onEachFeature: pop,
+				style: style_output,
+				});
+		map.addLayer(disp_lyr);
+		
+		function getData (label) {
+			return label==="2010"  ?  output2010:
+			label==="2011"  ? output2011 :
+			label==="2012"  ? output2012 :
+			label==="2013"  ? output2013  :
+			label==="2014"  ? output2014 :
+			label==="2015"  ? output2015 :
+			label==="2016"  ? output2016 :
+			label==="2017"  ? output2017 :
+					output2018;
+		}
+		
+		function updateChart (label) {
+			// reformat the features' attributes of interest into
+			// the data array format required by the Chart.js scatterplot
+			var scatterPlotDataArray = [],
+			data = getData(label), feat;
+	
+			for (var i = 0; i < data.features.length - 1; ++i) {
+				feat = data.features[i];
+				
+				scatterPlotDataArray.push({
+					x: feat.properties.mhhi,
+					y: feat.properties.ownOcc_total_pct
+				});
+			}
+
+			// assign the new scatterPlotDataArray to the chart's data property
+			chart.data.datasets[0].data = scatterPlotDataArray;
+
+			// finally, instruct the chart to re-draw itself with the new data
+			chart.update();
+		}
+
+		
+		function changeLayerFxn( {label,value,map}  ) {
+		
+			if(map.hasLayer(disp_lyr)) {
+				map.removeLayer(disp_lyr);
+			}
+			
+			var data = getData(label);
+			
+			disp_lyr = new L.geoJson(data, {
+				attribution: '',
+				interactive: false,
+				onEachFeature: pop,
+				style: style_output,
+				});			
+			
+			map.addLayer(disp_lyr);
+			layer_lines.bringToFront();
+			updateChart(label);
+		}
+		
+		
+		 L.control.timelineSlider({
+                timelineItems: ["2010","2011","2012","2013","2014","2015",
+				"2016","2017","2018"], 
+                changeMap: changeLayerFxn,
+                 })
+            .addTo(map); 
+            
+		var legend = L.control({position: 'bottomleft'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+			grades = [0,10,25,40,65,80,100],
+			labels = ["<strong>Owner-Occupied Units per 100 Units</strong>"],
+			from,to;
+
+			for (var i = 0; i < grades.length - 1; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+
+				labels.push(
+					'<i style="background:' + 
+					getColor(from + 1) + '"></i> ' +
+					from + ' &ndash; ' + to + '') ;
+			}
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+
+		legend.addTo(map);
+        </script>
+    </body>
+</html>

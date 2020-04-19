@@ -27,9 +27,7 @@ To get the data to display in leaflet, I saved each object as a GeoJSON and then
 
 To allow users to navigate the data in an intuitive manner, I used the [leaflet-timeline-slider](https://github.com/svitkin/leaflet-timeline-slider) plugin to control the layer being displayed rather than a normal layer control. Later, when I implemented the [Chart.js](https://www.chartjs.org/) scatter-plot to display the possible relationship between MHHI and owner-occupancy, this also enabled me to update the plot on-the-fly for the selected year.   
 
-This was also where I first noticed an apparent regime change between the data distribution in 2014 and the distribution in 2015. To highlight this, I used a diverging color palette from [ColorBrewer](https://colorbrewer2.org/) to difference when the majority of census tracts had less than 40 owner-occupied units per 100 housing units to when the majority had *greater than* 40. This change also corresponded to a reverse in the relationship between MHHI and Owner-Occupancy from negative to positive. To highlight that sudden change further, I used `ggplot2` to create a four pane graphic (two panes each for 2014 and 2015, one for the map and one for the scatterplot of MHHI vs Owner-Occupancy).   
-
-I was unable to determine why this shift occurred from the present data.   
+This was also where I first noticed an apparent regime change between the data distribution in 2014 and the distribution in 2015. To highlight this, I used a diverging color palette from [ColorBrewer](https://colorbrewer2.org/) to difference when the majority of census tracts had less than 40 owner-occupied units per 100 housing units to when the majority had *greater than* 40. This change also corresponded to a reverse in the relationship between MHHI and Owner-Occupancy from negative to positive. To highlight that sudden change further, I used `ggplot2` to create a four pane graphic (two panes each for 2014 and 2015, one for the map and one for the scatterplot of MHHI vs Owner-Occupancy). I saved it to a PDF, which I've cleaned up in Inkscape before uploading it here.     
 
 ### Outputs:   
 #### Web Map  

@@ -16,7 +16,7 @@ Looking at Owner-Occupied Housing Units per 100 Housing Units in Maryland from 2
 * [Inkscape](https://inkscape.org/)  
 
 ### Data:    
-I used Census data downloaded in R via the tidycensus package joined to census boundary shapefiles downloaded in R via the tigris package. The specific census variables I used were Total Housing Units, Total Occupied Units, and Owner-Occupied Units from table DP04 (“Selected Housing Characteristics”), and Median Household Income (MMHI) from table B19013.    
+I used Census data downloaded in R via the `tidycensus` package joined to census boundary shapefiles downloaded in R via the tigris package. The specific census variables I used were Total Housing Units, Total Occupied Units, and Owner-Occupied Units from table DP04 (“Selected Housing Characteristics”), and Median Household Income (MMHI) from table B19013.    
 
 The census boundary files from tigris are TIGER/Line data, which is in the NAD83 projection. I used the 2018 boundary files to visualize the census data.    
 

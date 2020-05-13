@@ -2,7 +2,17 @@
 
 ### Project Description:    
 Looking at Owner-Occupied Housing Units per 100 Housing Units in Maryland from 2010 to 2018.   
-  
+
+### Web Map  
+[<img src="proj2_webmap_thum.png?raw=true">](https://jdrew3.github.io/project2_486/webmap/index.html)    
+
+[Link to Web Map](https://jdrew3.github.io/project2_486/webmap/index.html)    
+
+### Comparison of 2014 to 2015
+[<img src="proj2_thum.png?raw=true">](owner_occupancy_2014_2015.pdf)   
+
+[Link to Full Graphic](owner_occupancy_2014_2015.pdf)    
+
 ### Tools Used:    
 * [R](https://www.r-project.org/) 
   + [tidycensus](https://cran.r-project.org/web/packages/tidycensus/index.html)
@@ -29,13 +39,3 @@ To allow users to navigate the data in an intuitive manner, I used the [leaflet-
 
 This was also where I first noticed an apparent regime change between the data distribution in 2014 and the distribution in 2015. To highlight this, I used a diverging color palette from [ColorBrewer](https://colorbrewer2.org/) to difference when the majority of census tracts had less than 40 owner-occupied units per 100 housing units to when the majority had *greater than* 40. This change also corresponded to a reverse in the relationship between MHHI and Owner-Occupancy from negative to positive. To highlight that sudden change further, I used `ggplot2` to create a four pane graphic (two panes each for 2014 and 2015, one for the map and one for the scatterplot of MHHI vs Owner-Occupancy). I saved it to a PDF, which I've cleaned up in Inkscape before uploading it here.     
 
-### Outputs:   
-#### Web Map  
-[<img src="proj2_webmap_thum.png?raw=true">](https://jdrew3.github.io/project2_486/webmap/index.html)    
-
-[Link to Web Map](https://jdrew3.github.io/project2_486/webmap/index.html)    
-
-#### Comparison of 2014 to 2015
-[<img src="proj2_thum.png?raw=true">](owner_occupancy_2014_2015.pdf)   
-
-[Link to Full Graphic](owner_occupancy_2014_2015.pdf)    

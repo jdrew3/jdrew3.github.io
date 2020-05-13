@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+   <head>
+    <meta charset = "UTF-8" />
+    <title>Health Insurance Coverage in MD</title>
+	
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+    <script src="src/leaflet-timeline-slider.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+	<style>
+		html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+		
+		/* From https://leafletjs.com/examples/choropleth/ */
+		.info {
+			padding: 6px 8px;
+			font: 14px/18px Arial, Helvetica, sans-serif;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.legend {
+			line-height: 18px;
+			color: #555;
+		}
+		.textbox {
+			line-height: 18px;
+			color: #555;
+			background: rgba(255,255,255,1);
+			width: 400px;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+		
+		/* From https://esri.github.io/esri-leaflet/examples/dynamic-chart.html */
+		.chart-container {
+			height: 300px;
+			width: 300px;
+		}
+		#info-pane {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			z-index: 400;
+			padding: 1em;
+			background: white;
+		}
+		.star{
+			font-size: 1.5em;
+		} 
+    </style>
+    
+</head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+		<div id="map"></div>
+		<div id="info-pane" class="leaflet-bar chart-container">
+			<canvas id="chartCanvas"></canvas>
+		</div>
+
+    <script src="geojs/md12.js"></script>
+		<script src="geojs/md17.js"></script>
+		<script src="geojs/md_pts.js"></script>
+		<script src="geojs/county_lines.js"></script>
+		
+        <script>
+		//https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript 
+		function numberWithCommas(x) {
+		if(x) {
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			return x;
+		}
+		
+		function fixedIfNum(x) {
+			if(x && typeof x == 'number') {
+				return x.toFixed(2);
+			}
+			return x
+		}
+		
+		var PRP = 'MHHI',
+		YR = '2012', TMP;
+		
+		
+		var initialChartData = {
+			datasets: [{
+				label: 'MHHI vs Percent Insured',
+				data: [{x: 10000, y: 20}]
+			}]
+		};
+  
+  var chartOptions = {
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Median Household Income (USD)'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 250000,
+          stepSize: 62500
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Percent Insured (%)'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 100,
+          stepSize: 25
+        }
+      }]
+    },
+    maintainAspectRatio: false,
+    animation: {
+      duration: 1000
+    },
+		onHover: handleChartHover
+  };
+	
+	var chartOptions2 = {
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Percent White (%)'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 100,
+          stepSize: 25
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Percent Insured (%)'
+        },
+        ticks: {
+          beginAtZero: true,
+          max: 100,
+          stepSize: 25
+        }
+      }]
+    },
+    maintainAspectRatio: false,
+    animation: {
+      duration: 1000
+    },
+		onHover: handleChartHover
+  };
+  
+  var chart = new Chart('chartCanvas', {
+    type: 'scatter',
+    data: initialChartData,
+    options: chartOptions
+  });
+	
+		
+		function pop(feature, layer) {
+			if (feature.properties && (feature.properties["pct_ins12"] || feature.properties["pct_ins17"])) {
+				var mhhi = feature.properties["MHHI12"] ? feature.properties["MHHI12"] : feature.properties["MHHI17"];
+				var ins = feature.properties["pct_ins12"] ? feature.properties["pct_ins12"] :
+				feature.properties["pct_ins17"];
+			
+				var text = '<table> \
+				<strong>Percent Insured</strong> <br />'+ 
+				fixedIfNum(ins) +
+				'&#37;<br /><strong>Percent White</strong> <br />'+
+				fixedIfNum(feature.properties.pct_wht) +
+				'&#37;<br /><strong>Median Household Income (USD)</strong> <br />&#36;'+
+				numberWithCommas(mhhi) +
+				'</table>';
+			
+				layer.bindPopup(text);
+			}
+		}
+		
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:2
+        }).fitBounds([[37.9,-79.5],[39.7,-75]]);
+        
+        map.attributionControl.setPrefix('<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot <a href="https://colorbrewer2.org/#type=diverging&scheme=BrBG&n=6" title="Color Advice for Maps">ColorBrewer</a> &middot <a href="https://www.chartjs.org/" title="Open source HTML5 Charts for your website">Chart.js</a> &middot <a href="https://github.com/CliffCloud/Leaflet.EasyButton" title="leaflet control buttons with icons and callbacks">EasyButton</a>');
+		 
+        var layer_EsriDarkGray_0 = L.tileLayer('http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 22
+        });
+        layer_EsriDarkGray_0;
+        map.addLayer(layer_EsriDarkGray_0);
+		
+		function getColor(d) {
+			return d > 95  ? '#08306B' :
+           d > 85   ? '#2879B9' :
+           d > 70   ? '#73B3D8' :
+           d > 50   ? '#C8DDF0' :
+                      '#F7FBFF';
+		}
+		
+		function style_output(feature) {
+			var prop = feature.properties["pct_ins12"] ? "pct_ins12" : "pct_ins17";
+			if(feature.properties[prop]) {
+			return {
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: getColor(feature.properties[prop]),
+                interactive: true,
+            }
+			}
+			return {
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: "#555",
+                interactive: true,
+            }
+        }
+		
+		function style_lines() {
+            return {
+                opacity: 1,
+                color: 'rgba(0,0,4,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+		
+		var layer_lines = L.geoJson(lines, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'lines',
+            layerName: 'layer_lines',
+            style: style_lines,
+        }).addTo(map);
+		
+		var disp_lyr = new L.geoJson(md12, {
+				attribution: '',
+				interactive: false,
+				onEachFeature: pop,
+				style: style_output,
+				});
+		map.addLayer(disp_lyr);
+		
+		
+
+		var layer_pts = L.geoJSON(md_pts, {
+			pointToLayer: function (feature, latlng) {
+				return L.marker(latlng, {opacity: 0.2});
+			}
+		});//.addTo(map);
+		
+		/*
+		var layer_pts = L.geoJson(md_pts, {
+			interactive: false,
+			style: {
+				fillOpacity: 0.1
+			}
+		}).addTo(map);
+		*/
+		
+		function getData (label) {
+			return label==="2012"  ?  md12 : md17;
+		}
+		
+		function updateChart (label) {
+			// reformat the features' attributes of interest into
+			// the data array format required by the Chart.js scatterplot
+			var scatterPlotDataArray = [],
+			data = getData(label), feat;
+	
+			for (var i = 0; i < data.features.length - 1; ++i) {
+				feat = data.features[i];
+				if(PRP === 'WHT') {
+					if(label==="2012") {
+					scatterPlotDataArray.push({
+						x: feat.properties.pct_wht,
+						y: feat.properties.pct_ins12,
+						featureId: feat.properties.GEOID,
+						ftnm: feat.properties.NAME
+					});
+					} else {
+					scatterPlotDataArray.push({
+						x: feat.properties.pct_wht,
+						y: feat.properties.pct_ins17,
+						featureId: feat.properties.GEOID,
+						ftnm: feat.properties.NAME
+					});
+					}
+				} else if(label==="2012") {
+				scatterPlotDataArray.push({
+					x: feat.properties.MHHI12,
+					y: feat.properties.pct_ins12,
+					featureId: feat.properties.GEOID,
+						ftnm: feat.properties.NAME
+				});
+				} else {
+				scatterPlotDataArray.push({
+					x: feat.properties.MHHI17,
+					y: feat.properties.pct_ins17,
+					featureId: feat.properties.GEOID,
+						ftnm: feat.properties.NAME
+				});
+				}
+			}
+
+			// assign the new scatterPlotDataArray to the chart's data property
+			chart.data.datasets[0].data = scatterPlotDataArray;
+			
+			if(PRP === "WHT") {
+				chart.options = chartOptions2;
+				chart.data.datasets[0].label = 'Percent White vs Percent Insured';
+			} else {
+				chart.options = chartOptions;
+				chart.data.datasets[0].label = 'MHHI vs Percent Insured';
+			}
+
+			// finally, instruct the chart to re-draw itself with the new data
+			chart.update();
+		}
+
+		
+		function changeLayerFxn( {label,value,map}  ) {
+		
+			if(map.hasLayer(disp_lyr)) {
+				map.removeLayer(disp_lyr);
+			}
+			
+			var data = getData(label);
+			
+			disp_lyr = new L.geoJson(data, {
+				attribution: '',
+				interactive: false,
+				onEachFeature: pop,
+				style: style_output,
+				});			
+			
+			map.addLayer(disp_lyr);
+			layer_lines.bringToFront();
+			//layer_pts.bringToFront();
+			updateChart(label);
+			YR = label;
+		}
+		
+		
+		 L.control.timelineSlider({
+                timelineItems: ["2012","2017"], 
+                changeMap: changeLayerFxn,
+                 })
+            .addTo(map); 
+            
+		var legend = L.control({position: 'bottomleft'});
+
+		legend.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info legend'),
+			grades = [30, 50, 70, 85, 95, 100],
+			labels = ["<strong>Percent Insured</strong>"],
+			from,to;
+
+			for (var i = 0; i < grades.length - 1; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+
+				labels.push(
+					'<i style="background:' + 
+					getColor(from + 1) + '"></i> ' +
+					from + '&#37; &ndash; ' + to + '&#37;') ;
+			}
+			labels.push('<i style="background:#555"></i> No Data') ;
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+
+		legend.addTo(map);
+		
+		var stateChangingButton = L.easyButton({
+			position: 'topright',
+			states: [{
+							stateName: 'money',        // name the state
+							icon:      '<span class="star">&dollar;</span>',  // and define its properties
+							title:     'MHHI',        // like its title
+							onClick: function(btn, map) {       // and its callback
+									PRP = 'WHT';
+									updateChart(YR);
+									btn.state('race');    // change state on click!
+							}
+					},{
+							stateName: 'race',
+							icon:      '<span class="star">&percnt;</span>',
+							title:     'Percent White',
+							onClick: function(btn, map) {
+									PRP = 'MHHI';
+									updateChart(YR);									
+									btn.state('money');
+							}
+			}]
+		});
+
+		stateChangingButton.addTo(map);
+		
+		var textbox = L.control({position: 'bottomright'});
+		
+		textbox.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'info textbox'),
+			labels = ['<strong>'+TEMP.ftnm+'</strong>'];
+			if(PRP === "WHT") {
+				labels.push("Percent White: " + fixedIfNum(TEMP.x) + '&#37;');
+			} else {
+				labels.push("MHHI: &dollar;" + numberWithCommas(TEMP.x));
+			}
+			
+			labels.push("Percent Insured: " + fixedIfNum(TEMP.y) + '&#37;');
+			//labels.push('<i style="background:#555"></i> No Data') ;
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+		
+		function handleChartHover (e) {
+			var chartHoverData = chart.getElementsAtEvent(e);
+			
+			if(map.hasLayer(layer_pts)) {
+				map.removeLayer(layer_pts);
+			}
+
+			if (!chartHoverData.length) {
+			  map.removeControl(textbox);
+				return;
+			}
+			/*
+			if(!map.hasLayer(layer_pts)) {
+				map.addLayer(layer_pts);
+			}
+			*/
+			
+			var hoverFeatureIds = chartHoverData.map(function (datum) {
+				return chart.data.datasets[0].data[datum._index];//.featureId;
+			});
+			
+			TEMP = hoverFeatureIds[0];
+			map.addControl(textbox);
+			
+			for(var i = 0; i < md_pts.features.length; i++) {
+				if(md_pts.features[i].properties.GEOID === hoverFeatureIds[0].featureId) {
+					layer_pts = new L.geoJSON(md_pts.features[i], {
+						pointToLayer: function (feature, latlng) {
+							return L.circleMarker(latlng, {
+								radius: 8,
+								fillColor: "#ff7800",
+								color: "#000",
+								weight: 1,
+								fillOpacity: 0.8,
+								opacity: 1
+							});
+						}
+					});
+					break;
+				}
+			}
+			
+			map.addLayer(layer_pts);
+		}
+        </script>
+    </body>
+</html>

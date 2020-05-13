@@ -15,6 +15,11 @@ Feature engineering and sentiment analysis of tweets
 
 ### GIS Projects
 
+[Health Insurance in Maryland](/project3_486/landing)   
+Percentage of people with health insurance in Maryland   
+[<img src="project3_486/images/map_preview.jpg?raw=true">](/project1_486/landing)   
+
+---   
 [Owner-Occupancy in Maryland](/project2_486/landing)   
 Interactive map of owner-occupancy rates across Maryland by Census Tract   
 [<img src="project2_486/proj2_webmap_thum.png?raw=true">](/project2_486/landing)      
@@ -23,11 +28,6 @@ Interactive map of owner-occupancy rates across Maryland by Census Tract
 [Twitter Map: The COVID-19 Crisis and the Sanders Campaign](/projects/project_web2)   
 Interactive bivariate choropleth map comparing tweets per capita by state  
 [<img src="images/tweets_map1_thum.jpg?raw=true">](/projects/project_web2)  
-
----   
-[Health Insurance in Maryland](/project1_486/landing)   
-Percentage of people with health insurance in Maryland   
-[<img src="project1_486/images/preview.png?raw=true">](/project1_486/landing)   
 
 ---   
 [Where Can You Be Under the Poverty Line and Still Live Near a Grocery Store?](/projects/project_web1)  

@@ -17,7 +17,7 @@ Feature engineering and sentiment analysis of tweets
 
 [Health Insurance in Maryland](/project3_486/landing)   
 Percentage of people with health insurance in Maryland   
-[<img src="project3_486/images/map_preview.jpg?raw=true">](/project1_486/landing)   
+[<img src="project3_486/images/map_preview.jpg?raw=true">](/project3_486/landing)   
 
 ---   
 [Owner-Occupancy in Maryland](/project2_486/landing)   

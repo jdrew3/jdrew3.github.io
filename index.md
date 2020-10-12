@@ -1,7 +1,7 @@
 ## Portfolio
 
-Candidate for Computer Science B.S. on the Data Science Track and the GIS Certificate at UMBC. Class of 2020.  
-Undergraduate research technician for the <a href="http://www.theearthfromabove.com/">Fagan lab</a> and member of DoIT Data Science Team at UMBC.   
+Computer Science B.S. on the Data Science Track and the GIS Certificate at UMBC. Class of 2020.  
+Former undergraduate research technician for the <a href="http://www.theearthfromabove.com/">Fagan lab</a> and member of DoIT Data Science Team at UMBC.   
 Strong background in machine learning and geospatial data analysis. Experienced with several GIS Applications, SQL databases, and prediction modeling.  
 
 ---
